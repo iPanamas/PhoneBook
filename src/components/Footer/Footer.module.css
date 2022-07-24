@@ -1,0 +1,31 @@
+.footer {
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  bottom: 0;
+  padding: 30px 0;
+}
+
+.footerLink {
+  font-family: 'Kaushan Script', cursive;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  font-weight: 500;
+  color: #fff;
+  opacity: 0.5;
+  font-size: 23px;
+  text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
+  transition: opacity 150ms linear;
+}
+
+.footerLink:hover {
+  opacity: 1;
+}
+
+.footerLink>svg {
+  font-size: 30px;
+  margin-right: 10px;
+}

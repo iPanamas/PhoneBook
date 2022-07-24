@@ -5,13 +5,13 @@ import PropTypes from 'prop-types';
 import useVisibleItem from 'Hooks/useVisibleItem';
 
 // RTK Query hooks
-import { useDeleteContactMutation } from 'redux/contacts/contactSlice';
+import { useDeleteContactMutation } from 'services/phoneBook';
 
 // Framer motion
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Animation settings
-import animamteSettings from 'animation/animationSettings';
+import animateSettings from 'animation/animationSettings';
 
 // Styles
 import s from './Contact.module.css';
@@ -26,7 +26,7 @@ const ContactItem = ({ id, name, number }) => {
         {isVisible && (
           <motion.li
             className={s.contactList__item}
-            variants={animamteSettings}
+            variants={animateSettings}
             initial="hidden"
             animate="visible"
             exit="hidden"

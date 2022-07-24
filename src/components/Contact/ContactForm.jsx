@@ -5,7 +5,7 @@ import { useState, useMemo } from 'react';
 import {
   useFetchContactsQuery,
   useAddContactMutation,
-} from 'redux/contacts/contactSlice';
+} from 'services/phoneBook';
 
 // Toast notify
 import { toast } from 'react-toastify';
@@ -51,10 +51,10 @@ const ContactForm = () => {
   };
 
   return (
-    <form className={s.phonebookForm} onSubmit={handleSubmit}>
-      <label className={s.phonebookLabel}>
+    <form className={s.phoneBookForm} onSubmit={handleSubmit}>
+      <label className={s.phoneBookLabel}>
         <input
-          className={s.phonebookInput}
+          className={s.phoneBookInput}
           value={name}
           onChange={onNameChange}
           type="text"
@@ -65,9 +65,9 @@ const ContactForm = () => {
           placeholder="Name"
         />
       </label>
-      <label className={s.phonebookLabel}>
+      <label className={s.phoneBookLabel}>
         <input
-          className={s.phonebookInput}
+          className={s.phoneBookInput}
           value={number}
           onChange={onNumberChange}
           type="tel"
@@ -78,7 +78,7 @@ const ContactForm = () => {
           placeholder="Number"
         />
       </label>
-      <button className={s.phonebookButton} type="submit">
+      <button className={s.phoneBookButton} type="submit">
         {isLoading ? <Loader /> : 'Add contact'}
       </button>
     </form>

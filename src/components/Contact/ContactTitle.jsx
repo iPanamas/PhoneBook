@@ -5,10 +5,10 @@ import { RiContactsLine } from 'react-icons/ri';
 // Styles
 import s from './Contact.module.css';
 
-export const PhonebookTitle = () => {
+export const PhoneBookTitle = () => {
   return (
-    <h1 className={s.phonebookTitle}>
-      Phonebook
+    <h1 className={s.phoneBookTitle}>
+      Phone book
       <BsPhone />
     </h1>
   );

@@ -1,4 +1,4 @@
-const animamteSettings = {
+const animateSettings = {
   visible: {
     opacity: 1,
     x: 0,
@@ -12,4 +12,4 @@ const animamteSettings = {
   },
 };
 
-export default animamteSettings;
+export default animateSettings;

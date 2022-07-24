@@ -1,19 +1,19 @@
-import s from './Contact.module.css';
+import s from './Footer.module.css';
 import { BsGithub } from 'react-icons/bs';
-const ContactsFooter = () => {
+const Footer = () => {
   return (
     <div className={s.footer}>
       <a
         className={s.footerLink}
-        href="https://github.com/iPanamas/goit-react-hw-07-phonebook"
+        href="https://github.com/iPanamas/goit-react-hw-08-phonebook"
         target="_blank"
         rel="noreferrer"
       >
         <BsGithub />
-        goit-react-hw-07-phonebook
+        goit-react-hw-08-phonebook
       </a>
     </div>
   );
 };
 
-export default ContactsFooter;
+export default Footer;

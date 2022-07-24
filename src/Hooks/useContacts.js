@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 // RTK Query hooks
-import { useFetchContactsQuery } from 'redux/contacts/contactSlice';
+import { useFetchContactsQuery } from 'services/phoneBook';
 
 // Create selector
 import { createSelector } from '@reduxjs/toolkit';

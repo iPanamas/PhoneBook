@@ -1,0 +1,31 @@
+.userMenu {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+
+}
+
+
+.userMenu__icon {
+  color: #fff;
+  font-size: 16px;
+  opacity: 0.7;
+  transition: opacity 150ms linear;
+}
+
+.userMenu__icon:hover {
+  opacity: 1;
+}
+
+.userMenu__text {
+  color: #ffffff;
+  font-size: 16px;
+  margin-left: 5px;
+  margin-right: 20px;
+}
+
+.userMenu__button {
+  position: relative;
+  top: 3px;
+  left: 5px;
+}

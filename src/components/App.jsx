@@ -1,20 +1,49 @@
+// Lazy-load
+import { lazy, Suspense } from 'react';
+
+// import { useSelector, useDispatch } from 'react-redux';
+import { setCredentials } from 'redux/auth/authSlice';
+// React-router
+import { Route, Routes } from 'react-router-dom';
+
 // Components
-import ContactForm from './Contact/ContactForm';
-import ContactList from './Contact/ContactList';
-import ContactsFooter from './Contact/ContactFooter';
-import { PhonebookTitle, ContactTitle } from './Contact/ContactTitle';
-// Styles
-import s from './Contact/Contact.module.css';
+import AppBar from './AppBar/AppBar';
+import Container from './Container/Container';
+import Footer from './Footer/Footer';
+
+// import { useFetchCurrentUserQuery } from 'services/phoneBook';
+
+// Pages
+const HomePage = lazy(() => import('pages/HomePage'));
+const ContactsPage = lazy(() => import('pages/ContactsPage'));
+const SignInPage = lazy(() => import('pages/SignInPage'));
+const SignUpPage = lazy(() => import('pages/SignUpPage'));
 
 const App = () => {
+  // const token = useSelector(state => state.auth.token);
+  // const currentUser = useFetchCurrentUserQuery();
+  // const dispatch = useDispatch();
+
+  // if (token) {
+  //   const { data } = currentUser;
+  //   console.log(data);
+  // } else {
+  //   console.log('dotvidaniya');
+  // }
+
   return (
-    <div className={s.phoneboook}>
-      <PhonebookTitle />
-      <ContactForm />
-      <ContactTitle />
-      <ContactList />
-      <ContactsFooter />
-    </div>
+    <Container>
+      <AppBar />
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/contacts" element={<ContactsPage />} />
+          <Route path="/register" element={<SignUpPage />} />
+          <Route path="/login" element={<SignInPage />} />
+        </Routes>
+      </Suspense>
+      <Footer />
+    </Container>
   );
 };
 
