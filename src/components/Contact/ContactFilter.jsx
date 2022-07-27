@@ -1,9 +1,12 @@
 // Contact selectors
 import contactSelectors from 'redux/contacts/contactSelectors';
+
 // Styles
 import s from './Contact.module.css';
+
 // Contact slice
 import { changeFilter } from 'redux/contacts/contactSlice';
+
 // Redux hooks
 import { useSelector, useDispatch } from 'react-redux';
 

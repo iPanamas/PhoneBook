@@ -1,20 +1,25 @@
-// Formik
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
-// Hooks
-import { useMemo } from 'react';
 // RTK Query hooks
 import {
   useFetchContactsQuery,
   useAddContactMutation,
 } from 'services/phoneBook';
+
+// Loader
+import { Loader } from 'components/Loader/Loader';
+
+// Styles
+import s from './Contact.module.css';
+
+// Formik
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+
+// Hooks
+import { useMemo } from 'react';
+
 // Toast notify
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// Loader
-import { Loader } from 'components/Loader/Loader';
-// Styles
-import s from './Contact.module.css';
 
 const schema = Yup.object().shape({
   name: Yup.string()

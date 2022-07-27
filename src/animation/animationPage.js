@@ -1,4 +1,4 @@
-const pageVariants = {
+export const pageVariants = {
   initial: {
     opacity: 0,
     x: '-100vw',
@@ -12,19 +12,26 @@ const pageVariants = {
   out: {
     opacity: 0,
     x: '100vw',
-    scale: 1.2,
+    scale: 0.5,
   },
 };
 
-const pageTransition = {
+export const pageTransition = {
   type: 'tween',
   ease: 'anticipate',
-  duration: 1,
+  duration: 0.75,
 };
 
-const animationPage = {
-  pageVariants,
-  pageTransition,
+export const listItemVariants = {
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      opacity: 1,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    x: -100,
+  },
 };
-
-export default animationPage;

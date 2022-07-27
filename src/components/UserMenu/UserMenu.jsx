@@ -1,16 +1,20 @@
+// Auth selector
+import authSelectors from 'redux/auth/authSelectors';
+
 // RTK Query hooks
 import { useSignOutUserMutation } from 'services/phoneBook';
 // Auth slice
 import { signOut } from 'redux/auth/authSlice';
+
 // styles
 import s from './UserMenu.module.css';
+
 // React icons
 import { FiUser } from 'react-icons/fi';
 import { GoSignOut } from 'react-icons/go';
+
 // Redux hooks
 import { useSelector, useDispatch } from 'react-redux';
-// Auth selector
-import authSelectors from 'redux/auth/authSelectors';
 
 const UserMenu = () => {
   const email = useSelector(authSelectors.getUserEmail);

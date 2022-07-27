@@ -1,5 +1,6 @@
 // Hooks
 import { useState } from 'react';
+
 // Toast notify
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

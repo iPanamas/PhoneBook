@@ -1,16 +1,20 @@
-import { motion } from 'framer-motion';
-import animationPage from 'animation/animationPage';
 // RTK Query hooks
 import { useSignInUserMutation } from 'services/phoneBook';
 
-// Redux
-import { useDispatch } from 'react-redux';
-import { signIn } from 'redux/auth/authSlice';
 // Hooks
 import useShowPassword from 'Hooks/useShowPassword';
 
 // Styles
 import s from './Pages.module.css';
+
+// Framer motion
+import { motion } from 'framer-motion';
+import { pageVariants } from 'animation/animationPage';
+import { pageTransition } from 'animation/animationPage';
+
+// Redux
+import { useDispatch } from 'react-redux';
+import { signIn } from 'redux/auth/authSlice';
 
 // React router dom
 import { NavLink } from 'react-router-dom';
@@ -73,8 +77,8 @@ const LoginPage = () => {
       animate="in"
       initial="initial"
       exit="out"
-      variants={animationPage.pageVariants}
-      transition={animationPage.pageTransition}
+      variants={pageVariants}
+      transition={pageTransition}
     >
       <FaUserCircle className={s.formWrapper__icon} />
       <h2 className={s.formWrapper__title}>Welcome</h2>

@@ -1,13 +1,15 @@
+// Styles
+import s from './Contact.module.css';
+
+// Components
+import ContactFilter from './ContactFilter';
+import ContactItem from './ContactItem';
+
 // Hooks
 import { useMemo } from 'react';
 import useContacts from 'Hooks/useContacts';
 // Loader
 import { Loader } from 'components/Loader/Loader';
-// Styles
-import s from './Contact.module.css';
-// Components
-import ContactFilter from './ContactFilter';
-import ContactItem from './ContactItem';
 
 const ContactList = () => {
   const { filteredContacts, isLoading, isSuccess } = useContacts();

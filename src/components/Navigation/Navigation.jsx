@@ -1,14 +1,18 @@
-// React-router
-import { NavLink } from 'react-router-dom';
-// Hooks
-import { useSelector } from 'react-redux';
 // Components
 import AuthNav from 'components/AuthNav/AuthNav';
 import UserMenu from 'components/UserMenu/UserMenu';
+
 // Styles
 import s from './Navigation.module.css';
+
 // Auth selectors
 import authSelectors from 'redux/auth/authSelectors';
+
+// React-router
+import { NavLink } from 'react-router-dom';
+
+// Hooks
+import { useSelector } from 'react-redux';
 
 const Navigation = () => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);

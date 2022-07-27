@@ -1,7 +1,8 @@
-// React icons
-import { NavLink } from 'react-router-dom';
 // Styles
 import s from '../Navigation/Navigation.module.css';
+
+// React icons
+import { NavLink } from 'react-router-dom';
 
 const AuthNav = () => {
   return (

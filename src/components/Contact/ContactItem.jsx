@@ -1,15 +1,18 @@
-// PropTypes
-import PropTypes from 'prop-types';
-// Hook
-import useVisibleItem from 'Hooks/useVisibleItem';
 // RTK Query hooks
 import { useDeleteContactMutation } from 'services/phoneBook';
-// Framer motion
-import { motion, AnimatePresence } from 'framer-motion';
-// Animation settings
-import animateSettings from 'animation/animationSettings';
+
 // Styles
 import s from './Contact.module.css';
+
+// Hook
+import useVisibleItem from 'Hooks/useVisibleItem';
+
+// PropTypes
+import PropTypes from 'prop-types';
+
+// Framer motion
+import { motion, AnimatePresence } from 'framer-motion';
+import { listItemVariants } from 'animation/animationPage';
 
 const ContactItem = ({ id, name, number }) => {
   const [deleteContact] = useDeleteContactMutation();
@@ -21,7 +24,7 @@ const ContactItem = ({ id, name, number }) => {
         {isVisible && (
           <motion.li
             className={s.contactList__item}
-            variants={animateSettings}
+            variants={listItemVariants}
             initial="hidden"
             animate="visible"
             exit="hidden"

@@ -1,25 +1,34 @@
+// Framer motion
 import { AnimatePresence } from 'framer-motion';
 
 // RTK Query API
 import { useAuthRefreshQuery } from 'services/phoneBook';
+
 // Lazy-load
 import { lazy, Suspense, useEffect } from 'react';
+
 // Redux hooks
 import { useSelector, useDispatch } from 'react-redux';
+
 // React-router
 import { Route, Routes, useLocation } from 'react-router-dom';
 import PrivateRoute from './Routes/PrivateRoute';
 import PublicRoute from './Routes/PublicRoute';
+
 // Auth slice
 import { refreshToken } from 'redux/auth/authSlice';
+
 // Auth selectors
 import authSelectors from 'redux/auth/authSelectors';
+
 // Components
 import AppBar from './AppBar/AppBar';
 import Container from './Container/Container';
 import Footer from './Footer/Footer';
+
 // Loader
 import { LoaderBar } from './Loader/Loader';
+
 // Pages
 const HomePage = lazy(() => import('pages/HomePage'));
 const ContactsPage = lazy(() => import('pages/ContactsPage'));

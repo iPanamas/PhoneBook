@@ -1,10 +1,12 @@
-// Hooks
-import { useMemo } from 'react';
-import { useSelector } from 'react-redux';
 // Redux selectors
 import contactSelectors from 'redux/contacts/contactSelectors';
 // RTK Query hooks
 import { useFetchContactsQuery } from 'services/phoneBook';
+
+// Hooks
+import { useMemo } from 'react';
+import { useSelector } from 'react-redux';
+
 // Create selector
 import { createSelector } from '@reduxjs/toolkit';
 

@@ -1,5 +1,6 @@
 // Styles
 import s from './Footer.module.css';
+
 // React icons
 import { BsGithub } from 'react-icons/bs';
 

@@ -1,7 +1,10 @@
-import { motion } from 'framer-motion';
-import animationPage from 'animation/animationPage';
 // Styles
 import s from './Pages.module.css';
+
+// Framer motion
+import { motion } from 'framer-motion';
+import { pageVariants } from 'animation/animationPage';
+import { pageTransition } from 'animation/animationPage';
 
 // React icons
 import { FaAddressBook } from 'react-icons/fa';
@@ -13,8 +16,8 @@ const HomePage = () => {
       animate="in"
       initial="initial"
       exit="out"
-      variants={animationPage.pageVariants}
-      transition={animationPage.pageTransition}
+      variants={pageVariants}
+      transition={pageTransition}
     >
       <h1 className={s.homePage__title}>
         <FaAddressBook className={s.homePage__icon} />
