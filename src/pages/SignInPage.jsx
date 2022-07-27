@@ -4,6 +4,8 @@ import { useSignInUserMutation } from 'services/phoneBook';
 // Redux
 import { useDispatch } from 'react-redux';
 import { signIn } from 'redux/auth/authSlice';
+// Hooks
+import useShowPassword from 'Hooks/useShowPassword';
 
 // Styles
 import s from './Pages.module.css';
@@ -17,6 +19,8 @@ import * as Yup from 'yup';
 
 // React icons
 import { FaUserCircle } from 'react-icons/fa';
+import { BsEye } from 'react-icons/bs';
+import { BsEyeSlash } from 'react-icons/bs';
 
 // Toast notify
 import { toast } from 'react-toastify';
@@ -31,6 +35,7 @@ const schema = Yup.object().shape({
 });
 
 const LoginPage = () => {
+  const [type, handlePasswordToggle] = useShowPassword();
   const [signInUser] = useSignInUserMutation();
   const dispatch = useDispatch();
 
@@ -77,14 +82,19 @@ const LoginPage = () => {
           />
         </label>
         <label className={s.form__label}>
-          <input
-            className={s.form__input}
-            name="password"
-            onChange={formik.handleChange}
-            value={formik.values.password}
-            type="password"
-            placeholder="Password"
-          />
+          <div className={s.inputWrapper}>
+            <input
+              className={s.form__input}
+              name="password"
+              onChange={formik.handleChange}
+              value={formik.values.password}
+              type={type}
+              placeholder="Password"
+            />
+            <span className={s.input__icon} onClick={handlePasswordToggle}>
+              {type === 'password' ? <BsEye /> : <BsEyeSlash />}
+            </span>
+          </div>
         </label>
         <button className={s.form__button} type="submit" onClick={handleClick}>
           Sign in

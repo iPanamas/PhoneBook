@@ -15,7 +15,7 @@ const ContactList = () => {
   const contactsSum = filteredContacts?.length;
 
   const sortContactsById = useMemo(() => {
-    return [...filteredContacts].sort((a, b) => b.id - a.id);
+    return [...filteredContacts].reverse();
   }, [filteredContacts]);
 
   return (

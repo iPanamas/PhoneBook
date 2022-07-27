@@ -14,7 +14,6 @@ import authSelectors from 'redux/auth/authSelectors';
 
 const UserMenu = () => {
   const email = useSelector(authSelectors.getUserEmail);
-
   const dispatch = useDispatch();
   const [signOutUser] = useSignOutUserMutation();
 

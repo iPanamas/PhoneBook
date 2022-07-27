@@ -1,13 +1,15 @@
 // Hooks
 import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
+// Redux selectors
+import contactSelectors from 'redux/contacts/contactSelectors';
 // RTK Query hooks
 import { useFetchContactsQuery } from 'services/phoneBook';
 // Create selector
 import { createSelector } from '@reduxjs/toolkit';
 
 const useContacts = () => {
-  const filter = useSelector(state => state.filter.value);
+  const filter = useSelector(contactSelectors.getFilter);
 
   const selectFilteredContacts = useMemo(() => {
     return createSelector(
