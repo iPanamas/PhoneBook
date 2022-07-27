@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+import animationPage from 'animation/animationPage';
 // RTK Query hooks
 import { useSignInUserMutation } from 'services/phoneBook';
 
@@ -66,7 +68,14 @@ const LoginPage = () => {
   };
 
   return (
-    <div className={s.formWrapper}>
+    <motion.div
+      className={s.formWrapper}
+      animate="in"
+      initial="initial"
+      exit="out"
+      variants={animationPage.pageVariants}
+      transition={animationPage.pageTransition}
+    >
       <FaUserCircle className={s.formWrapper__icon} />
       <h2 className={s.formWrapper__title}>Welcome</h2>
       <form className={s.form} onSubmit={formik.handleSubmit}>
@@ -106,7 +115,7 @@ const LoginPage = () => {
           </NavLink>
         </p>
       </form>
-    </div>
+    </motion.div>
   );
 };
 

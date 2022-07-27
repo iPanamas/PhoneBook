@@ -27,6 +27,7 @@ select:-webkit-autofill:focus {
 
 
 .phoneBook {
+  position: absolute;
   width: 400px;
   background-color: aqua;
   margin: 0 auto;
@@ -38,7 +39,6 @@ select:-webkit-autofill:focus {
   backdrop-filter: blur(10px);
   box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
   text-align: center;
-  transition: all 0.2s ease-in-out;
 }
 
 .phoneBookTitle {

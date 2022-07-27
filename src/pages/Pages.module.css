@@ -32,6 +32,7 @@ select:-webkit-autofill:focus {
 
 
 .formWrapper {
+  position: absolute;
   text-align: center;
 }
 .formWrapper__icon {

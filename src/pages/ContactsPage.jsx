@@ -1,3 +1,6 @@
+import { motion } from 'framer-motion';
+import animationPage from 'animation/animationPage';
+
 // Components
 import ContactForm from 'components/Contact/ContactForm';
 import ContactList from 'components/Contact/ContactList';
@@ -8,14 +11,19 @@ import s from 'components/Contact/Contact.module.css';
 
 const ContactsPage = () => {
   return (
-    <>
-      <div className={s.phoneBook}>
-        <PhoneBookTitle />
-        <ContactForm />
-        <ContactTitle />
-        <ContactList />
-      </div>
-    </>
+    <motion.div
+      className={s.phoneBook}
+      animate="in"
+      initial="initial"
+      exit="out"
+      variants={animationPage.pageVariants}
+      transition={animationPage.pageTransition}
+    >
+      <PhoneBookTitle />
+      <ContactForm />
+      <ContactTitle />
+      <ContactList />
+    </motion.div>
   );
 };
 
