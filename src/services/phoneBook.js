@@ -43,7 +43,7 @@ export const phoneBookApi = createApi({
         method: 'POST',
       }),
     }),
-    fetchCurrentUser: builder.query({
+    authRefresh: builder.query({
       query: () => '/users/current',
       providesTags: ['PhoneBook'],
     }),
@@ -76,7 +76,7 @@ export const {
   useSignUpUserMutation,
   useSignInUserMutation,
   useSignOutUserMutation,
-  useFetchCurrentUserQuery,
+  useAuthRefreshQuery,
   useFetchContactsQuery,
   useDeleteContactMutation,
   useAddContactMutation,

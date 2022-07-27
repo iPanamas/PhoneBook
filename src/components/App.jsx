@@ -1,18 +1,23 @@
+// RTK Query API
+import { useAuthRefreshQuery } from 'services/phoneBook';
 // Lazy-load
-import { lazy, Suspense } from 'react';
-
-// import { useSelector, useDispatch } from 'react-redux';
-import { setCredentials } from 'redux/auth/authSlice';
+import { lazy, Suspense, useEffect } from 'react';
+// Redux hooks
+import { useSelector, useDispatch } from 'react-redux';
 // React-router
 import { Route, Routes } from 'react-router-dom';
-
+import PrivateRoute from './Routes/PrivateRoute';
+import PublicRoute from './Routes/PublicRoute';
+// Auth slice
+import { refreshToken } from 'redux/auth/authSlice';
+// Auth selectors
+import authSelectors from 'redux/auth/authSelectors';
 // Components
 import AppBar from './AppBar/AppBar';
 import Container from './Container/Container';
 import Footer from './Footer/Footer';
-
-// import { useFetchCurrentUserQuery } from 'services/phoneBook';
-
+// Loader
+import { LoaderBar } from './Loader/Loader';
 // Pages
 const HomePage = lazy(() => import('pages/HomePage'));
 const ContactsPage = lazy(() => import('pages/ContactsPage'));
@@ -20,30 +25,66 @@ const SignInPage = lazy(() => import('pages/SignInPage'));
 const SignUpPage = lazy(() => import('pages/SignUpPage'));
 
 const App = () => {
-  // const token = useSelector(state => state.auth.token);
-  // const currentUser = useFetchCurrentUserQuery();
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const token = useSelector(authSelectors.getToken);
+  const { data, isLoading } = useAuthRefreshQuery(token, {
+    skip: token === null,
+  });
 
-  // if (token) {
-  //   const { data } = currentUser;
-  //   console.log(data);
-  // } else {
-  //   console.log('dotvidaniya');
-  // }
+  useEffect(() => {
+    if (data) {
+      dispatch(refreshToken(data));
+    }
+  }, [data, dispatch]);
 
   return (
-    <Container>
-      <AppBar />
-      <Suspense fallback={<h1>Loading...</h1>}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/contacts" element={<ContactsPage />} />
-          <Route path="/register" element={<SignUpPage />} />
-          <Route path="/login" element={<SignInPage />} />
-        </Routes>
-      </Suspense>
-      <Footer />
-    </Container>
+    !isLoading && (
+      <Container>
+        <AppBar />
+        <div className="content-wrap">
+          <Suspense fallback={<LoaderBar />}>
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <PublicRoute>
+                    <HomePage />
+                  </PublicRoute>
+                }
+              />
+
+              <Route
+                path="/contacts"
+                element={
+                  <PrivateRoute>
+                    <ContactsPage />
+                  </PrivateRoute>
+                }
+              />
+
+              <Route
+                path="/signUp"
+                element={
+                  <PublicRoute restricted>
+                    <SignUpPage />
+                  </PublicRoute>
+                }
+              />
+
+              <Route
+                path="/signIn"
+                element={
+                  <PublicRoute restricted>
+                    <SignInPage />
+                  </PublicRoute>
+                }
+              />
+            </Routes>
+          </Suspense>
+        </div>
+        <Footer />
+      </Container>
+    )
   );
 };
 

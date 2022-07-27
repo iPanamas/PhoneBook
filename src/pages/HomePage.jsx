@@ -1,7 +1,16 @@
+// Styles
 import s from './Pages.module.css';
 
+// React icons
+import { FaAddressBook } from 'react-icons/fa';
+
 const HomePage = () => {
-  return <h1 className={s.homePage__title}>Hello this is home page 💁‍♂️</h1>;
+  return (
+    <div className={s.homePage}>
+      <FaAddressBook className={s.homePage__icon} />
+      <h1 className={s.homePage__title}>Hello this is phoneBook App</h1>
+    </div>
+  );
 };
 
 export default HomePage;

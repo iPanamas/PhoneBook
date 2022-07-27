@@ -1,5 +1,8 @@
+// Styles
 import s from './Footer.module.css';
+// React icons
 import { BsGithub } from 'react-icons/bs';
+
 const Footer = () => {
   return (
     <div className={s.footer}>

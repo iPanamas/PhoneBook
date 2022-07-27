@@ -1,4 +1,7 @@
 import { setupListeners } from '@reduxjs/toolkit/dist/query';
+
+// Redux persist
+import storage from 'redux-persist/lib/storage';
 import {
   persistStore,
   persistReducer,
@@ -9,11 +12,14 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
 
-// User-auth
+// RTK Query API
 import { phoneBookApi } from 'services/phoneBook';
+
+// Auth slice
 import { authSlice } from 'redux/auth/authSlice';
+
+// Contact slice
 import { filterSlice } from 'redux/contacts/contactSlice';
 
 // Redux-store-configure

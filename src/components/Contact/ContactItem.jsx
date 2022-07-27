@@ -1,18 +1,13 @@
 // PropTypes
 import PropTypes from 'prop-types';
-
 // Hook
 import useVisibleItem from 'Hooks/useVisibleItem';
-
 // RTK Query hooks
 import { useDeleteContactMutation } from 'services/phoneBook';
-
 // Framer motion
 import { motion, AnimatePresence } from 'framer-motion';
-
 // Animation settings
 import animateSettings from 'animation/animationSettings';
-
 // Styles
 import s from './Contact.module.css';
 

@@ -1,15 +1,19 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { FiUser } from 'react-icons/fi';
-import { GoSignOut } from 'react-icons/go';
-
+// RTK Query hooks
 import { useSignOutUserMutation } from 'services/phoneBook';
-import { unSetCredentials } from 'redux/auth/authSlice';
-
+// Auth slice
+import { signOut } from 'redux/auth/authSlice';
 // styles
 import s from './UserMenu.module.css';
+// React icons
+import { FiUser } from 'react-icons/fi';
+import { GoSignOut } from 'react-icons/go';
+// Redux hooks
+import { useSelector, useDispatch } from 'react-redux';
+// Auth selector
+import authSelectors from 'redux/auth/authSelectors';
 
 const UserMenu = () => {
-  const email = useSelector(state => state.auth.user.email);
+  const email = useSelector(authSelectors.getUserEmail);
 
   const dispatch = useDispatch();
   const [signOutUser] = useSignOutUserMutation();
@@ -17,7 +21,7 @@ const UserMenu = () => {
   const handleSignOut = async () => {
     try {
       signOutUser();
-      dispatch(unSetCredentials());
+      dispatch(signOut());
     } catch (error) {
       console.log(error);
     }

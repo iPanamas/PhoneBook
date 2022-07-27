@@ -1,13 +1,61 @@
-/* LoginPage styles */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffffff;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.homePage {
+  display: flex;
+  align-items: center;
+}
+
+.homePage__title {
+  font-size: 75px;
+  color: #fff;
+  opacity: 0.6;
+  font-family: 'Kaushan Script', cursive;
+  text-align: centerж
+}
+
+.homePage__icon {
+  font-size: 75px;
+  color: #fff;
+  opacity: 0.6;
+  margin-right: 20px;
+}
+
+
+.formWrapper {
+  text-align: center;
+}
+.formWrapper__icon {
+  font-size: 50px;
+  opacity: 0.6;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.formWrapper__title {
+  font-weight: 200;
+  opacity: 0.6;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
 
 .form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 400px;
+  width: 375px;
   margin: 0 auto;
   background-color: aqua;
-  padding: 50px 0 50px 0;
+  padding: 30px 0 30px 0;
   background: rgba(255, 255, 255, 0.3);
   border-radius: 20px;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
@@ -30,13 +78,15 @@
 
 .form__link {
   text-decoration: none;
-  color: #ddd;
+  color: #ffffff;
+  opacity: 0.6;
   font-size: 14px;
-  transition: text-shadow 100ms linear;
+  transition: opacity 250ms linear;
+  margin-left: 3px;
 }
 
 .form__link:hover {
-  text-shadow: 2px 2px 6px #00000040;
+  opacity: 1;
 }
 
 .form__link:active {
@@ -75,7 +125,6 @@
 }
 
 .form__button {
-  margin-top: 20px;
   cursor: pointer;
   background: transparent;
   width: 150px;
@@ -94,14 +143,14 @@
   text-shadow: 2px 2px 4px rgb(0 0 0 / 20%);
 }
 
+.form__button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
+}
+
 .form__text {
   margin-top: 20px;
   color: #ffffff;
 }
 
-.homePage__title {
-  color: #fff;
-  opacity: 0.6;
-  font-family: 'Kaushan Script', cursive;
-  text-align: center;
-}
+

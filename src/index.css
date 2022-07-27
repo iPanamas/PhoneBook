@@ -7,7 +7,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(45deg, #FC466B, #3F5EFB);
+  background: linear-gradient(45deg, #3494E6, #EC6EAD);
+  background-size: 400% 400%;
   height: 100vh;
   font-family: 'Montserrat', sans-serif;
 }
@@ -47,4 +48,12 @@ button {
 
 .active {
   opacity: 1;
+}
+
+.content-wrap {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
 }

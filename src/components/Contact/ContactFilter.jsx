@@ -1,12 +1,14 @@
-import { changeFilter } from 'redux/contacts/contactSlice';
-
-import { useSelector, useDispatch } from 'react-redux';
-
+// Contact selectors
+import contactSelectors from 'redux/contacts/contactSelectors';
 // Styles
 import s from './Contact.module.css';
+// Contact slice
+import { changeFilter } from 'redux/contacts/contactSlice';
+// Redux hooks
+import { useSelector, useDispatch } from 'react-redux';
 
 const ContactFilter = () => {
-  const filter = useSelector(state => state.filter.value);
+  const filter = useSelector(contactSelectors.getFilter);
   const dispatch = useDispatch();
 
   return (

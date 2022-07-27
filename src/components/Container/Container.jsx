@@ -1,6 +1,5 @@
 // PropTypes
 import PropTypes from 'prop-types';
-
 // Styles
 import s from './Container.module.css';
 

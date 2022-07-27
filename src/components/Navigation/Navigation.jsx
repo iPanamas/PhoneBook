@@ -1,13 +1,17 @@
 // React-router
 import { NavLink } from 'react-router-dom';
+// Hooks
+import { useSelector } from 'react-redux';
+// Components
 import AuthNav from 'components/AuthNav/AuthNav';
 import UserMenu from 'components/UserMenu/UserMenu';
-import { useSelector } from 'react-redux';
 // Styles
 import s from './Navigation.module.css';
+// Auth selectors
+import authSelectors from 'redux/auth/authSelectors';
 
 const Navigation = () => {
-  const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
+  const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
 
   return (
     <nav className={s.nav}>
@@ -17,13 +21,14 @@ const Navigation = () => {
             Main
           </NavLink>
         </li>
-        <li className={s.navList__item}>
-          <NavLink className={s.navList__link} to="/contacts">
-            Contacts
-          </NavLink>
-        </li>
+        {isLoggedIn && (
+          <li className={s.navList__item}>
+            <NavLink className={s.navList__link} to="/contacts">
+              Contacts
+            </NavLink>
+          </li>
+        )}
         {isLoggedIn ? <UserMenu /> : <AuthNav />}
-        {/* <UserMenu /> */}
       </ul>
     </nav>
   );
