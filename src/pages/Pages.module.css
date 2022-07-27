@@ -12,11 +12,23 @@ select:-webkit-autofill:focus {
 }
 .homePage {
   display: flex;
+  flex-direction: column;
   align-items: center;
+
 }
 
 .homePage__title {
+  display: flex;
+  align-items: center;
   font-size: 75px;
+  color: #fff;
+  opacity: 0.6;
+  font-family: 'Kaushan Script', cursive;
+  margin-bottom: 10px;
+}
+
+.HomePage__text {
+  font-size: 50px;
   color: #fff;
   opacity: 0.6;
   font-family: 'Kaushan Script', cursive;
@@ -26,8 +38,7 @@ select:-webkit-autofill:focus {
 .homePage__icon {
   font-size: 75px;
   color: #fff;
-  opacity: 0.6;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 

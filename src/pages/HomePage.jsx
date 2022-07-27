@@ -16,8 +16,11 @@ const HomePage = () => {
       variants={animationPage.pageVariants}
       transition={animationPage.pageTransition}
     >
-      <FaAddressBook className={s.homePage__icon} />
-      <h1 className={s.homePage__title}>Hello this is phoneBook App</h1>
+      <h1 className={s.homePage__title}>
+        <FaAddressBook className={s.homePage__icon} />
+        Hello this is phoneBook App
+      </h1>
+      <p className={s.HomePage__text}>Here you can save your contacts</p>
     </motion.div>
   );
 };
